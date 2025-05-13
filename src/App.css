@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* altura total correta */
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background-image: url('https://img.freepik.com/fotos-gratis/nave-espacial-orbita-o-cometa-azul-brilhante-da-galaxia-escura-gerado-pela-ia_188544-9662.jpg?t=st=1746848737~exp=1746852337~hmac=898f507ef2881d09a9b38c4b8c9610f198c659f7912268ff07f7b9b98c2e8dd5&w=1060');
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.content-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.content-section + .content-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 80px;
+}
+
+.content-section:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Rodapé */
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  margin-top: auto; /* fixa no final sem forçar espaço */
+  padding: 10px 0;
+}
+
+.footer-copyright {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 15px;
+    background-attachment: scroll; /* Evita "tremor" em mobile */
+  }
+
+  .main-content {
+    padding: 40px 10px;
+  }
+
+  .content-section {
+    padding: 30px 12px;
+  }
+
+  .content-section + .content-section {
+    margin-top: 20px;
+    padding-top: 40px;
+  }
+
+  .content-section h1,
+  .content-section h2,
+  .content-section h3 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .content-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .footer {
+    padding: 20px 10px;
+    font-size: 0.9em;
+  }
+
+  .footer-copyright {
+    font-size: 0.85em;
+    padding: 15px;
+  }
+}
+

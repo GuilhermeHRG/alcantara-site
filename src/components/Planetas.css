@@ -1,0 +1,218 @@
+
+/* Estilo do container do footer */
+.planetas-footer {
+    width: 100vw;
+    background: rgba(10, 20, 40, 0.9);
+    border-top: 1px solid #4a80f0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+/* Container de planetas */
+.planetas-horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4a80f0 transparent;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    width: 100%;
+    height: auto;
+}
+
+/* Scrollbar Chrome/Safari */
+.planetas-horizontal-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+.planetas-horizontal-scroll::-webkit-scrollbar-thumb {
+    background-color: #4a80f0;
+    border-radius: 10px;
+}
+
+/* Itens dos planetas */
+.planeta-footer-item {
+    position: relative;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.planeta-footer-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    filter: drop-shadow(0 0 5px rgba(74, 128, 240, 0.5));
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.planeta-footer-item:hover .planeta-footer-img {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 10px rgba(74, 128, 240, 0.8));
+}
+
+/* Tooltip */
+.planeta-footer-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: rgba(20, 30, 50, 0.95);
+    border: 1px solid #4a80f0;
+    border-radius: 8px;
+    padding: 10px;
+    width: 160px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.planeta-footer-item:hover .planeta-footer-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.planeta-footer-tooltip h4 {
+    color: #4a80f0;
+    margin: 0 0 5px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.planeta-footer-tooltip p {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    padding: 15px;
+    color: #aaa;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.planeta-destaque {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 20, 40, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.planeta-destaque-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(74, 128, 240, 0.7));
+}
+
+.planeta-destaque-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #4a80f0;
+}
+
+.planeta-destaque-info p {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+.planeta-destaque-info button {
+  padding: 10px 20px;
+  border: none;
+  background: #4a80f0;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.planeta-destaque-info button:hover {
+  background: #3a6cd4;
+}
+
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .planetas-horizontal-scroll {
+    gap: 15px;
+  }
+
+  .planeta-footer-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .planeta-footer-tooltip {
+    width: 140px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .planetas-horizontal-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
+    overflow: visible;
+  }
+
+  .planeta-footer-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .planeta-footer-tooltip {
+    width: 130px;
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 500px) {
+  .planetas-horizontal-scroll {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .planeta-footer-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .planeta-footer-tooltip {
+    width: 100%;
+    font-size: 0.7em;
+  }
+}
