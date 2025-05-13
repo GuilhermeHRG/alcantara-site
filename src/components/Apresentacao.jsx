@@ -1,7 +1,7 @@
 import React from 'react';
 import './Apresentacao.css';
 import { usePlaneta } from '../context/PlanetaContext';
-import PlutaoPage from '../components/Plutaopage';
+import PlutaoPage from './PlutaoPage';
 
 const Apresentacao = () => {
     const { selecionado } = usePlaneta();
